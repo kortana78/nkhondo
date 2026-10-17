@@ -1,0 +1,53 @@
+# Render Blueprint: Nkhondo online play.
+# - nkhondo-server: paid web service (Frankfurt), Docker build of /server.
+# - Database: Neon Postgres (free tier) via DATABASE_URL, set in the
+#   dashboard (NOT committed). A paid Render Postgres alternative is
+#   included below, commented out.
+# - Frontend stays on Vercel (static Vite build). An optional Render
+#   static-site alternative is included, commented out.
+
+services:
+  - type: web
+    name: nkhondo-server
+    runtime: docker
+    region: frankfurt
+    plan: 1c-2g # paid — never free (free tier sleeps)
+    dockerfilePath: ./server/Dockerfile
+    dockerContext: ./
+    healthCheckPath: /healthz
+    maxShutdownDelaySeconds: 240 # let running matches finish (server drains on SIGTERM)
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false # paste the Neon Postgres URL in the dashboard
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_KEY
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        value: https://nkhondo.vercel.app,http://localhost:5173,http://localhost:4173
+      - key: CLIENT_URL
+        value: https://nkhondo.vercel.app
+
+  # Alternative: everything on one platform (static client on Render).
+  # Uncomment to use INSTEAD of Vercel (same VITE_* env vars).
+  # - type: web
+  #   name: nkhondo-client
+  #   runtime: static
+  #   region: frankfurt
+  #   buildCommand: npm ci && npm run build
+  #   staticPublishPath: ./dist
+  #   envVars:
+  #     - key: VITE_API_URL
+  #       value: https://nkhondo-server.onrender.com
+  #     - key: VITE_WS_URL
+  #       value: wss://nkhondo-server.onrender.com/ws
+
+# Alternative: paid Render Postgres in the same region (instead of Neon).
+# Uncomment to use, and remove/comment the DATABASE_URL sync:false entry above.
+# databases:
+#   - name: nkhondo-db
+#     region: frankfurt
+#     plan: 0.5c-1g

@@ -1,0 +1,24 @@
+{
+  "name": "@nkhondo/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server/src/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "tsx tests/run.ts && tsx tests/sweep.ts 12",
+    "test:load": "tsx tests/load.ts"
+  },
+  "dependencies": {
+    "pg": "^8.13.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.10.0",
+    "@types/ws": "^8.5.0",
+    "tsx": "^4.19.0",
+    "typescript": "~5.6.0"
+  }
+}

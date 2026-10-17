@@ -1,0 +1,16 @@
+{
+  "name": "NKHONDO — Battle for the village",
+  "short_name": "Nkhondo",
+  "description": "A Malawian real-time lane card battler. Nkhondo ya m'mudzi.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1c1009",
+  "theme_color": "#7a1f1f",
+  "lang": "en",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

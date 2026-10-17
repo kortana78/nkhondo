@@ -1,0 +1,47 @@
+{
+  "name": "nkhondo2",
+  "private": true,
+  "version": "0.9.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "sim": "tsx tools/headless-sim.ts",
+    "sim:quick": "tsx tools/headless-sim.ts 100",
+    "verify": "tsx tools/verify.ts",
+    "test:part5": "tsx tools/part5-tests.ts",
+    "test:roster": "tsx tools/roster-tests.ts",
+    "test:all": "tsx tools/verify.ts && tsx tools/part5-tests.ts && tsx tools/roster-tests.ts && tsx tools/determinism.ts && tsx tools/elo-test.ts && tsx tools/asset-check.ts",
+    "test:assets": "tsx tools/asset-check.ts",
+    "test:scale": "tsx tools/scale-audit.ts",
+    "beta:smoke": "node tools/beta-smoke.mjs",
+    "sim:200": "tsx tools/headless-sim.ts 200",
+    "test:server": "npm --prefix server run test",
+    "test:server:load": "npm --prefix server run test:load",
+    "cards:dump": "tsx tools/dump-cards.ts",
+    "shots": "node tools/shots.mjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "three": "^0.186.1",
+    "three-stdlib": "^2.36.1",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@types/three": "^0.186.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "playwright": "^1.64.0",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="osky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2f5e"/>
+      <stop offset="0.55" stop-color="#b05a6e"/>
+      <stop offset="0.8" stop-color="#ff9a5a"/>
+    </linearGradient>
+    <linearGradient id="oearth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9c4a2b"/>
+      <stop offset="1" stop-color="#4a1e10"/>
+    </linearGradient>
+    <linearGradient id="ologo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe9b0"/>
+      <stop offset="0.5" stop-color="#e8a020"/>
+      <stop offset="1" stop-color="#8a4d08"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#osky)"/>
+  <circle cx="880" cy="380" r="130" fill="#ffe9b0"/>
+  <circle cx="880" cy="380" r="190" fill="#ffb84d" opacity="0.35"/>
+  <ellipse cx="600" cy="620" rx="750" ry="200" fill="url(#oearth)"/>
+  <g>
+    <rect x="180" y="380" width="220" height="150" rx="8" fill="#a8502c"/>
+    <polygon points="290,230 420,390 160,390" fill="#c9a45c"/>
+    <rect x="580" y="400" width="180" height="130" rx="8" fill="#8a3f24"/>
+    <polygon points="670,280 790,410 550,410" fill="#b08c46"/>
+  </g>
+  <text x="120" y="200" font-family="sans-serif" font-weight="900" font-size="120" letter-spacing="8" fill="url(#ologo)">NKHONDO</text>
+  <text x="124" y="262" font-family="sans-serif" font-weight="700" font-size="44" fill="#ffe9b0">Nkhondo ya m'mudzi</text>
+  <text x="124" y="312" font-family="sans-serif" font-size="32" fill="#ffffff" opacity="0.9">Battle for the village — free in your browser</text>
+</svg>
